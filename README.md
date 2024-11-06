@@ -27,6 +27,8 @@ def foo():
 
 The function `foo()` is very good.
 
+The function foo() is very good.
+
 ![](bird.jpg)
 
 [link to Google](https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwic_faF9ceJAxWSKvsDHeZ7CZEQPAgI)
