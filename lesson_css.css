@@ -1,0 +1,34 @@
+body {
+    background-color: cadetblue;
+    color: white;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+}
+
+
+#p1 {
+    font-family: "Verdana", "Tahoma", Sans-Serif;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 1em;
+}
+
+
+.titleBlack {
+    color: black;
+}
+
+
+.mycontainer {
+    background-color: white;
+    color: black;
+    /*width: 200px;*/
+    width: 80%;
+    margin: auto;
+    height: 200px;
+
+    padding: 20px;
+    margin-top: 20px;
+
+
+}
+
