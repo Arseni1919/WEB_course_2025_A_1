@@ -1,0 +1,28 @@
+.black-bg {
+    background-color: black;
+    color: white;
+}
+
+
+.white-bg {
+    background-color: white;
+    color: black;
+}
+
+.error {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 20px;
+}
+
+.success {
+    background-color: darkseagreen;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 20px;
+}
