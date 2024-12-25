@@ -9,7 +9,12 @@
     {% include('navigation.html') %}
 
     {% if user %}
-        <h1>Welcome to the {{ page_name }}, {{ user.first_name | default('Our new Client', true) | upper() }} {{ user.lastname }}!</h1>
+{#        <h1>Welcome to the {{ page_name }}, {{ user.first_name | default('Our new Client', true) | upper() }} {{ user.lastname }}!</h1>#}
+        {% if session.get('logged_in') %}
+        <h1>Welcome to the {{ page_name }}, {{ session.get('username') }}!</h1>
+        {% else %}
+            <h1>Welcome to the Our Website! Please register!</h1>
+        {% endif %}
         <h2>My age is {{ user.age }}</h2>
         <h2>Degrees:</h2>
         <ul>

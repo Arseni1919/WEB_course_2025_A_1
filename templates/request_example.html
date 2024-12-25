@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+
+{% block main %}
+
+    {% if logged_user %}
+	<h1>Welcome to the Request-Response Lesson, {{ logged_user }}!</h1>
+    {% else %}
+        <h1>Welcome to the Request-Response Lesson!</h1>
+    {% endif %}
+
+    <h2>###############################################</h2>
+    <h2>The request method is: {{ request_type }}</h2>
+    <h2>###############################################</h2>
+
+    <h2>Simple GET Form:</h2>
+    <form action="/request_response" method="GET">
+        <br>
+        <input type="text" name="first_name" placeholder="Enter your name..">
+        <br>
+        <br>
+        <input type="text" name="last_name" placeholder="Enter your second name..">
+        <br>
+        <br>
+        <input type="submit" value="Send">
+    </form>
+
+    {% if first_name %}
+        <h2>Welcome {{ first_name }} {{ last_name }} to our website!</h2>
+    {% endif %}
+
+    <h2>Simple POST Form:</h2>
+    <form action="/request_response" method="POST">
+        <br>
+        <input type="text" name="user_name" placeholder="Enter your user name..">
+        <br>
+        <br>
+        <input type="password" name="password" placeholder="Enter your password..">
+        <br>
+        <br>
+        <input type="submit" value="Send">
+    </form>
+
+    {% if user_name %}
+        <h2>Your user name is: {{ user_name }}</h2>
+        <h2>Your password is: {{ password }}</h2>
+    {% endif %}
+
+{% endblock %}
+
+
+
+{% block footer %}
+{% endblock %}

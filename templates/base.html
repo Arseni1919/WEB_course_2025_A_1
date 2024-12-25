@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+</head>
+<body>
+
+{% block header %}
+    <h3>*************************</h3>
+    <h3>This is BASE header</h3>
+    <h3>*************************</h3>
+{% endblock %}
+
+{% include('navigation.html') %}
+
+
+{% block main %}
+    This is the main part of the page!
+{% endblock %}
+
+
+
+{% block footer %}
+    <h3>*************************</h3>
+    <footer>THIS IS FOOTER</footer>
+    <h3>*************************</h3>
+{% endblock %}
+
+</body>
+</html>

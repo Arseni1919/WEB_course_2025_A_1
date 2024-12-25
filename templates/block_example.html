@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+	<h3>My new Header!</h3>
+{% endblock %}
+
+{% block main %}
+    <h1>Welcome to the Block Example</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, sapiente?</p>
+
+    <img src="{{ url_for('static', filename='images/bird.jpg') }}" alt="">
+{% endblock %}
+
+
+{% block footer %}
+<h3>This is a new line from the block example.</h3>
+{#    {{ block.super }}#}
+{% endblock %}
