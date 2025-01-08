@@ -2,6 +2,7 @@
 from flask import Flask, redirect, url_for
 from flask import render_template
 from flask import request, session
+import json
 
 app = Flask(__name__)
 app.secret_key = '123'
@@ -62,7 +63,7 @@ def block_example_func():
 def request_response_func():
     request_type = request.method
     if request_type == 'GET':
-        logged_user = session['username']
+        logged_user = session['username'] if 'username' in session else 'Stranger'
         if 'first_name' in request.args:
             first_name = request.args['first_name']
             last_name = request.args['last_name']
@@ -115,9 +116,44 @@ def logout_func():
     return redirect('/')
 
 
-# http://127.0.0.1:5000
-# /request_response
-# ?
-# first_name=Arseniy
-# &
-# last_name=Pertzovsky
+# ------------------------------------------------------------------ #
+# ------------------------------------------------------------------ #
+# ------------------------------------------------------------------ #
+# FETCH
+# ------------------------------------------------------------------ #
+# ------------------------------------------------------------------ #
+# ------------------------------------------------------------------ #
+
+@app.route('/fetch_page')
+def fetch_page_func():
+    return render_template('fetch_example.html')
+
+
+@app.route('/fetch_example', methods=['GET', 'POST'])
+def fetch_example_func():
+    if request.method == 'GET':
+        data = {'message': 'Success from fetch_example route!'}
+        # data = 'Success from fetch_example route!'
+        return json.dumps(data)
+    elif request.method == 'POST':
+        data_dict = request.json
+        # check DB
+        user_cart = {'orders': 13, 'startDate': '12.1.2024'}
+        return json.dumps(user_cart)
+    else:
+        raise RuntimeError('')
+
+
+# @app.route('/fetch_example', methods=['GET', 'POST'])
+# def fetch_example_func():
+#     if request.method == 'GET':
+#         data = {'message': 'GET response'}
+#         return json.dumps(data)
+#     if request.method == 'POST':
+#         mydict = request.json
+#         print(type(mydict))
+#         print(mydict)
+#         data = {'message': 'POST response'}
+#         data.update(mydict)
+#         return json.dumps(data)
+#     raise RuntimeError('no no')
