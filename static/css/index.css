@@ -1,0 +1,50 @@
+.red {
+    color: red;
+}
+
+.green {
+    color: white;
+    background-color: green;
+    padding: 10px;
+}
+
+.delete-btn {
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.delete-btn:active {
+    color: red;
+    background-color: white;
+}
+
+.delete-form {
+    display: inline;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.ex {
+    background-color: #333333; /*not mandatory */
+    border: white 2px solid; /*not mandatory */
+}
+
+.p2, .p3, .p4 {
+    width: 20px; /*not mandatory */
+}
+
+.p1, .p3, .p4 {
+    height: 20px; /*not mandatory */
+}
+
+.container {
+    display: flex;
+}
+
+.sub-container-2 {
+    display: flex;
+}

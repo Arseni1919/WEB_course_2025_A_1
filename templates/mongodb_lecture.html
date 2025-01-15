@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}MongoDB{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+
+<h2>{{message}}</h2>
+
+<h2>Customers:</h2>
+{#    <ul>#}
+{#    {% for x in my_list %}#}
+{#        <li>{{ x }}</li>#}
+{#    {% endfor %}#}
+{#    </ul>#}
+
+
+  <ul>
+    {% for x in my_list %}
+      <li>
+        <form class="delete-form" action="/db_delete" method="post">
+            <input type="text" name="name" value="{{x.name}}" hidden>
+            <input type="submit" value="X" class="delete-btn">
+        </form>
+        Name: {{x.name}}, Address: {{x.address}}, Rating: {{x.rating}}</li>
+    {% endfor %}
+  </ul>
+
+<a href="/db_increment">+1</a>
+
+<br>
+<br>
+<br>
+
+<form action="/db_insert" method="get">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="address" placeholder="address">
+  <input type="number" name="rating" placeholder="rating">
+  <input type="submit" value="Add">
+</form>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+
+
+
+
+
+
