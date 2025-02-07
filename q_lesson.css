@@ -1,6 +1,8 @@
 /*grid example*/
 .d1 {
     display: grid;
+    grid-template-columns: 10px 10px 10px;
+    grid-template-rows: 10px 10px;
 }
 
 .d2 {
@@ -30,6 +32,6 @@
 
 
 /*flex example*/
-.d1 {display: flex;}
+/*.d1 {display: flex;}*/
 
 
